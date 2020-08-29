@@ -10,6 +10,8 @@ class Person{
     boolean isMale = false;
 
     //fun
-
+    public void nihao(){
+        
+    }
 
 }
