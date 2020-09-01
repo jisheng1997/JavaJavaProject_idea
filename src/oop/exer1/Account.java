@@ -16,7 +16,6 @@ public class Account {
         this.balance = balance;
         this.annualInterestRate = annualInterestRate;
     }
-
     public int getId() {
         return id;
     }
