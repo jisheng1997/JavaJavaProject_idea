@@ -13,7 +13,7 @@ public class SingletonTest {
     }
 }
 
-//懒汉式
+//饿汉式
 class Order2{
     //私有化构造器
     private Order2(){}
@@ -26,7 +26,7 @@ class Order2{
     }
 }
 
-//懒汉式
+//懒汉式（线程不安全）
 class Order1{
     //私有化构造器
     private Order1(){}
@@ -34,10 +34,13 @@ class Order1{
     //声明当前类对象，没有初始化，且为static的
     private static Order1 instance = null;
     //声明返回当前类对象的方法
-    public static Order1 getInstance(){
+    public static Order1 getInstance() {
         if (instance == null){
-            instance = new Order1();
-        }
-        return instance;
+            synchronized (Order1.class) {
+                if (instance == null) {
+                    instance = new Order1();
+                }
+            }
+        }return instance;
     }
 }
