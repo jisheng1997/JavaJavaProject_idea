@@ -12,7 +12,7 @@ public class StringTest1 {
     public static void main(String[] args) {
         String str1 = "JavaEE";
         String str2 = "JavaEE";
-
+        str1.compareTo(str2);
 
         String str3 = new String("JavaEE");
         String str4 = new String("JavaEE");

@@ -55,7 +55,55 @@ public class StringMethodTest {
         //判断字符串是否以指定前缀开始
         System.out.println(str1.startsWith("ac"));
         System.out.println(str1.startsWith("ce",2));
+        //判断字符串是否包含字符串
+        System.out.println(str1.contains("bce"));
     }
+
+    @Test
+    public void test5(){
+        String str1 = "hello,world";
+        //返回字符在字符串中的位置
+        System.out.println(str1.indexOf("l"));
+        System.out.println(str1.indexOf("lol"));
+    }
+
+    @Test
+    public void test6(){
+        String str1 = "Hello,world";
+        //替换字符串
+        System.out.println(str1.replace("Hello","Hallo"));
+        String str2 = "sa34a54g5a4dag6sd3";
+        String str3 = str2.replaceAll("[A-Za-z]++","");
+        System.out.println(str3);
+
+        //匹配字符串
+        String str4 = "13318182214";
+        System.out.println(str4.matches("\\d+"));
+
+        //切片字符串
+        int sum = 0;
+        String str5[] = str3.split("");
+            for (String string:str5) {
+                int temp = Integer.parseInt(string);
+                sum += temp;
+            }
+        System.out.println(sum);
+    }
+
+    @Test
+    public void test7(){
+        String str1 = "abc123";
+        char [] chars = str1.toCharArray();
+        for (char c:chars){
+            System.out.println(c);
+        }
+
+        char [] char1 = {'a','b','c','d','e'};
+        String str2 = new String(char1);
+        System.out.println(str2);
+    }
+
+
 
 
 }
